@@ -4,8 +4,9 @@ namespace BulkyWeb.Models;
 
 public class Category
 {
-    [Key] // <= This is Datannotation
+    [Key] // <= This is DataAnnotation
     public int Id { get; set; }
+    [Required]
     public string Name { get; set; }
     public int DisplayOrder { get; set; }
 }
