@@ -1,10 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BulkyWeb.DataAccess;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyWeb.Controllers;
 
 public class CategoryController : Controller
 {
-	public IActionResult Index()
+    private readonly AppDbContext _db;
+    public CategoryController(AppDbContext db)
+    {
+        _db = db;
+    }
+    public IActionResult Index()
 	{
 		return View();
 	}
