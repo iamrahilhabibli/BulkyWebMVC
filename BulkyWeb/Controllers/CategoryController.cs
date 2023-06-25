@@ -1,4 +1,5 @@
 ﻿using BulkyWeb.DataAccess;
+using BulkyWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyWeb.Controllers;
@@ -12,7 +13,7 @@ public class CategoryController : Controller
     }
     public IActionResult Index()
 	{
-        var objCategoryList = _db.Categories.ToList();
-		return View();
+        List<Category> objCategoryList = _db.Categories.ToList();
+		return View(objCategoryList);
 	}
 }
